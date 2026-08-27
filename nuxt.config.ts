@@ -12,11 +12,11 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  css: ['~/assets/css/main.css'],
+
   devServer: {
     port: 3006
   },
-
-  css: ['~/assets/css/main.css'],
 
   compatibilityDate: '2026-06-30',
 
@@ -58,6 +58,11 @@ export default defineNuxtConfig({
     },
     i18n: {
       defaultLocale: 'fr'
+    },
+    editor: {
+      // Nuxt Icon runs in local bundle mode with lucide and simple-icons only,
+      // so any other Iconify collection would save fine but render nothing.
+      iconLibraries: ['lucide', 'simple-icons']
     },
     git: {
       commit: {
