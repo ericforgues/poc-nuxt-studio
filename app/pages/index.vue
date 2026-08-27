@@ -2,7 +2,7 @@
 const localePath = useLocalePath()
 const { page, classes, teachers } = useSchoolContent()
 
-const { data: home } = await page('/index')
+const { data: home } = await page('/')
 const { data: allClasses } = await classes()
 const { data: allTeachers } = await teachers()
 

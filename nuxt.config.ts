@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  devServer: {
+    port: 3006
+  },
+
   css: ['~/assets/css/main.css'],
 
   compatibilityDate: '2026-06-30',
@@ -33,7 +37,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3006',
     defaultLocale: 'fr',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
