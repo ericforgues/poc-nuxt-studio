@@ -59,4 +59,9 @@ entries:
     startTime: 13:00
     endTime: 14:00
     room: Studio B - Saint-Roch
+  - classSlug: hip-hop-ados
+    day: saturday
+    startTime: 7:00
+    endTime: 9:00
+    room: Studio A
 season: Session d'automne 2026
