@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@nuxtjs/i18n',
+    'nuxt-studio'
   ],
 
   devtools: {
@@ -11,17 +14,50 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    '/': { prerender: true }
-  },
-
   compatibilityDate: '2026-06-30',
+
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
+  },
 
   eslint: {
     config: {
       stylistic: {
         commaDangle: 'never',
         braceStyle: '1tbs'
+      }
+    }
+  },
+
+  i18n: {
+    baseUrl: 'http://localhost:3000',
+    defaultLocale: 'fr',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    locales: [
+      { code: 'fr', language: 'fr-CA', name: 'Français', dir: 'ltr', file: 'fr.json' },
+      { code: 'en', language: 'en-CA', name: 'English', dir: 'ltr', file: 'en.json' }
+    ]
+  },
+
+  studio: {
+    // Auto-detected on Vercel, Netlify, GitHub Actions and GitLab CI.
+    // Set these env vars (or edit the fallbacks) when publishing from another host.
+    repository: {
+      provider: 'github',
+      owner: process.env.STUDIO_REPO_OWNER || 'your-org',
+      repo: process.env.STUDIO_REPO_NAME || 'poc-nuxt-studio',
+      branch: process.env.STUDIO_REPO_BRANCH || 'main'
+    },
+    i18n: {
+      defaultLocale: 'fr'
+    },
+    git: {
+      commit: {
+        messagePrefix: 'content:'
       }
     }
   }

@@ -1,43 +1,48 @@
 <script setup lang="ts">
-const localePath = useLocalePath()
-const { page, classes, teachers } = useSchoolContent()
+defineI18nRoute({
+  paths: {
+    fr: '/calendrier',
+    en: '/calendar'
+  }
+})
 
-const { data: home } = await page('/index')
+const localePath = useLocalePath()
+const { page, classes, teachers, schedule } = useSchoolContent()
+
+const { data: calendarPage } = await page('/calendar')
 const { data: allClasses } = await classes()
 const { data: allTeachers } = await teachers()
-
-const featured = computed(() => allClasses.value.filter(c => c.featured))
+const { data: weekly } = await schedule()
 
 const teacherOf = (slug: string) => allTeachers.value.find(teacher => teacher.slug === slug)
 
 useSeoMeta({
-  title: () => home.value?.title,
-  description: () => home.value?.description
+  title: () => calendarPage.value?.title,
+  description: () => calendarPage.value?.description
 })
 </script>
 
 <template>
-  <div v-if="home">
+  <div v-if="calendarPage">
     <UPageHero
-      :title="home.hero.headline"
-      :description="home.hero.subline"
+      :title="calendarPage.hero.headline"
+      :description="calendarPage.hero.subline"
       :links="[
-        { label: home.hero.ctaLabel, to: localePath('calendar'), icon: 'i-lucide-calendar-days', size: 'lg' },
-        { label: $t('nav.contact'), to: localePath('contact'), variant: 'subtle', size: 'lg' }
+        { label: calendarPage.hero.ctaLabel, to: localePath('contact'), icon: 'i-lucide-mail', size: 'lg' }
       ]"
       orientation="horizontal"
     >
       <img
-        :src="home.hero.image"
-        :alt="home.hero.headline"
+        :src="calendarPage.hero.image"
+        :alt="calendarPage.hero.headline"
         class="rounded-lg shadow-lg w-full"
       >
     </UPageHero>
 
-    <UPageSection v-if="home.highlights?.length">
+    <UPageSection v-if="calendarPage.highlights?.length">
       <UPageGrid>
         <UPageCard
-          v-for="highlight in home.highlights"
+          v-for="highlight in calendarPage.highlights"
           :key="highlight.title"
           :icon="highlight.icon"
           :title="highlight.title"
@@ -47,12 +52,12 @@ useSeoMeta({
     </UPageSection>
 
     <UPageSection
+      id="classes"
       :title="$t('calendar.classesTitle')"
-      :links="[{ label: $t('nav.calendar'), to: localePath('calendar'), trailingIcon: 'i-lucide-arrow-right', variant: 'subtle' }]"
     >
       <UPageGrid>
         <ClassCard
-          v-for="item in featured"
+          v-for="item in allClasses"
           :key="item.slug"
           :item="item"
           :teacher="teacherOf(item.teacher)"
@@ -60,7 +65,10 @@ useSeoMeta({
       </UPageGrid>
     </UPageSection>
 
-    <UPageSection :title="$t('calendar.teachersTitle')">
+    <UPageSection
+      id="teachers"
+      :title="$t('calendar.teachersTitle')"
+    >
       <UPageGrid>
         <TeacherCard
           v-for="teacher in allTeachers"
@@ -70,9 +78,21 @@ useSeoMeta({
       </UPageGrid>
     </UPageSection>
 
+    <UPageSection
+      id="schedule"
+      :title="$t('calendar.scheduleTitle')"
+      :description="weekly?.season"
+    >
+      <ScheduleTable
+        :schedule="weekly"
+        :classes="allClasses"
+        :teachers="allTeachers"
+      />
+    </UPageSection>
+
     <UPageSection>
       <UPageBody>
-        <ContentRenderer :value="home" />
+        <ContentRenderer :value="calendarPage" />
       </UPageBody>
     </UPageSection>
   </div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Salsa">
+  <rect width="800" height="500" fill="#fce7f3"/>
+  <circle cx="656" cy="110" r="140" fill="#be185d" opacity="0.18"/>
+  <circle cx="128" cy="410" r="170" fill="#be185d" opacity="0.12"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Public Sans, Segoe UI, sans-serif" font-size="55" font-weight="700" fill="#be185d">Salsa</text>
+</svg>

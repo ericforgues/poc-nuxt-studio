@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "calendar": "Calendar",
+    "contact": "Contact"
+  },
+  "common": {
+    "switchLanguage": "Switch language",
+    "readMore": "Learn more",
+    "backHome": "Back to home"
+  },
+  "calendar": {
+    "classesTitle": "Our classes",
+    "teachersTitle": "Our teachers",
+    "scheduleTitle": "Weekly schedule",
+    "filterDay": "Day",
+    "filterLevel": "Level",
+    "allDays": "All days",
+    "allLevels": "All levels",
+    "noResults": "No class matches these filters.",
+    "columns": {
+      "day": "Day",
+      "time": "Time",
+      "class": "Class",
+      "teacher": "Teacher",
+      "room": "Room"
+    }
+  },
+  "levels": {
+    "debutant": "Beginner",
+    "intermediaire": "Intermediate",
+    "avance": "Advanced",
+    "tous": "All levels"
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "class": {
+    "level": "Level",
+    "duration": "Duration",
+    "price": "Price",
+    "teacher": "Teacher",
+    "minutes": "{count} min"
+  },
+  "contact": {
+    "formTitle": "Write to us",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thank you! Your message has been sent.",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Invalid email address.",
+      "message": "Your message must be at least 10 characters long."
+    },
+    "infoTitle": "Contact details",
+    "hoursTitle": "Opening hours"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
