@@ -23,7 +23,7 @@ info:
 
 ## Bienvenue au studio
 
-Depuis 2010, l'École de danse Saint-Jean accueille les danseurs de la région de Québec dans une ambiance chaleureuse et exigeante. Notre pédagogie met l'accent sur la technique, la musicalité et le plaisir de bouger. C'est vraiment fou, ça s'update live.
+Depuis 2011, l'École de danse Saint-Jean accueille les danseurs de la région de Québec dans une ambiance chaleureuse et exigeante. Notre pédagogie met l'accent sur la technique, la musicalité et le plaisir de bouger. C'est vraiment fou, ça s'update live.
 
 ## Une session, plusieurs parcours
 
