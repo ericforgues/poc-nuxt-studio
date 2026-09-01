@@ -23,9 +23,15 @@ info:
 
 ## Bienvenue au studio
 
-Depuis 2011, l'École de danse Saint-Jean accueille les danseurs de la région de Québec dans une ambiance chaleureuse et exigeante. Notre pédagogie met l'accent sur la technique, la musicalité et le plaisir de bouger. C'est vraiment fou, ça s'update live.
+## Depuis 2011, lde danse Saint-Jean accueille les danseurs de la région de Québec dans une ambiance chaleureuse et exigeante. Notre pédagogie met l'accent sur la technique, la musicalité et le plaisir de bouger. C'est vraiment fou, ça s'update live.
 
 ## Une session, plusieurs parcours
+
+::steps
+Step 1
+
+Step2
+::
 
 Chaque session dure quinze semaines et se termine par un spectacle présenté au Théâtre Petit Champlain. Les cours d'essai sont gratuits pendant les deux premières semaines de la session d'automne.
 
